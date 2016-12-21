@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <Name>Sysco Sync App</Name>
+  <Overview>A tool to upload selected directories into Amazon AWS cloud – S3 or Glacier.</Overview>
+  <Description>Install guide here... WIP</Description>
+  <Registry>https://hub.docker.com/r/syscoav/sync-app/</Registry>
+  <Repository>syscoav/sync-app</Repository>
+  <GitHub>https://github.com/syscoav/sync-app-docker-template</GitHub>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8080</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/sync-app</HostDir>
+      <ContainerDir>/appdata</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Changes>
+    [font size=3]2016.12.21[/font]
+    - First version
+  </Changes>
+  <Version>1</Version>
+  <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+  <Banner></Banner>
+  <Icon></Icon>
+  <ExtraParams></ExtraParams>
+</Container>
