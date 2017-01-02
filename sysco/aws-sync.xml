@@ -13,16 +13,21 @@
     <Publish>
       <Port>
         <HostPort>8080</HostPort>
-        <ContainerPort>8080</ContainerPort>
+        <ContainerPort>5000</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
     </Publish>
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/sync-app</HostDir>
+      <HostDir>/mnt/disk1/appdata/syncapp</HostDir>
       <ContainerDir>/appdata</ContainerDir>
       <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/disk1/Glacier</HostDir>
+      <ContainerDir>/storage</ContainerDir>
+      <Mode>ro</Mode>
     </Volume>
   </Data>
   <Changes>
