@@ -1,42 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Container>
+<Container version="2">
+
+  <Version>1</Version>
   <Name>Sysco Sync App</Name>
-  <Overview>A tool to upload selected directories into Amazon AWS cloud – S3 or Glacier.</Overview>
-  <Description>Install guide here... WIP</Description>
+  <Category>Backup:</Category>
+
+  <Overview>A tool to backup selected directories into Amazon AWS cloud.</Overview>
+  <Description>Please read README.md in SyncApp project.</Description>
+
   <Registry>https://hub.docker.com/r/syscoav/sync-app/</Registry>
   <Repository>syscoav/sync-app</Repository>
-  <GitHub>https://github.com/syscoav/sync-app-docker-template</GitHub>
-  <BindTime>true</BindTime>
+
   <Privileged>false</Privileged>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
       <Port>
-        <HostPort>8080</HostPort>
+        <HostPort>5000</HostPort>
         <ContainerPort>5000</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
     </Publish>
   </Networking>
-  <Data>
-    <Volume>
-      <HostDir>/mnt/disk1/appdata/syncapp</HostDir>
-      <ContainerDir>/appdata</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-    <Volume>
-      <HostDir>/mnt/disk1/Glacier</HostDir>
-      <ContainerDir>/storage</ContainerDir>
-      <Mode>ro</Mode>
-    </Volume>
-  </Data>
-  <Changes>
-    [font size=3]2016.12.21[/font]
-    - First version
-  </Changes>
-  <Version>1</Version>
-  <WebUI>http://[IP]:[PORT:8080]/</WebUI>
-  <Banner></Banner>
-  <Icon></Icon>
-  <ExtraParams></ExtraParams>
+
+  <Config
+    Type="Path"
+    Name="Config directory"
+    Target="/appdata"
+    Default="/mnt/disk1/appdata/syncapp"
+    Mode="rw"
+    Description="This is a place where you put config.yml file."
+    Display="always"
+    Required="true">/mnt/disk1/appdata/syncapp</Config>
+  <Config
+    Type="Path"
+    Name="Storage path"
+    Target="/storage"
+    Default="/mnt/disk1/Glacier"
+    Mode="rw"
+    Description="This is a root mount point for backup data. I.e. '/mnt/disk1/Glacier/file.mov' will become '/storage/file.mov'."
+    Display="always"
+    Required="true">/mnt/disk1/Glacier</Config>
+
+  <WebUI>http://[IP]:[PORT:5000]/</WebUI>
 </Container>
