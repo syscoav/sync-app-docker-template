@@ -37,7 +37,7 @@
   <Config 
       Type="Variable"
       Name="Environment type"
-      Target="SYNACPP_ENV"
+      Target="SYNCAPP_ENV"
       Default="prod"
       Description="Environment in which application will run. Can be prod or dev."
       Mask="false"
