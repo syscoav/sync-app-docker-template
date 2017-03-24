@@ -23,6 +23,7 @@
     Description="This is a place where you put config.yml file."
     Display="always"
     Required="true">/mnt/disk1/appdata/syncapp</Config>
+
   <Config
     Type="Path"
     Name="Storage path"
@@ -32,6 +33,16 @@
     Description="This is a root mount point for backup data. I.e. '/mnt/disk1/Glacier/file.mov' will become '/storage/file.mov'."
     Display="always"
     Required="true">/mnt/disk1/Glacier</Config>
+
+  <Config 
+      Type="Variable"
+      Name="Environment type"
+      Target="SYNACPP_ENV"
+      Default="prod"
+      Description="Environment in which application will run. Can be prod or dev."
+      Mask="false"
+      Display="advanced"
+      Required="false">prod</Config>
 
   <Config 
     Type="Port" 
