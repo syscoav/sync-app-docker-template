@@ -5,6 +5,7 @@
   <Name>Sysco Sync App</Name>
   <Category>Backup:</Category>
 
+  <Icon>https://cdn.jazzy.pro/sysco/syncapp_ico.png</Icon>
   <Overview>A tool to backup selected directories into Amazon AWS cloud.</Overview>
   <Description>Please read README.md in SyncApp project.</Description>
 
