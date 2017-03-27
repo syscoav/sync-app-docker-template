@@ -46,6 +46,36 @@
       Required="false">prod</Config>
 
   <Config 
+      Type="Variable"
+      Name="Environment type"
+      Target="SYNCAPP_THREADS"
+      Default="2"
+      Description="Number of parallel uploads."
+      Mask="false"
+      Display="advanced"
+      Required="false">2</Config>
+
+  <Config 
+      Type="Variable"
+      Name="Environment type"
+      Target="SYNCAPP_PART_SIZE"
+      Default="16"
+      Description="Size (in MB) of single part to split big files."
+      Mask="false"
+      Display="advanced"
+      Required="false">16</Config>
+
+  <Config 
+      Type="Variable"
+      Name="Environment type"
+      Target="SYNCAPP_TIMEOUT"
+      Default="30"
+      Description="Time (in minutes) after single upload will timeout."
+      Mask="false"
+      Display="advanced"
+      Required="false">30</Config>
+
+  <Config 
     Type="Port" 
     Name="Web UI" 
     Target="5000" 
